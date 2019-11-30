@@ -34,9 +34,9 @@ const CardPokemon = ({ url }) => {
     <>
       {pokemonDetail ? (
         <Card>
-          <CardHeader> 
-{pokemonDetail.name}
-</CardHeader>
+          <CardHeader>
+            <h1>{pokemonDetail.name.replace(/^./, pokemonDetail.name[0].toUpperCase())}</h1>
+          </CardHeader>
 
           <CardImg
             top
@@ -78,9 +78,10 @@ const CardPokemon = ({ url }) => {
             <LikeFB url={url} />
 
             <ShareComponent
-              url={url}
-              text={pokemonDetail.name}
-              address={`${pokemonDetail.name}`}
+              url2={url}
+              text={`este pokemon tiene un peso de ${pokemonDetail.weight} libras con una altura de ${pokemonDetail.height} pies`}
+              name={pokemonDetail.name}
+              order={pokemonDetail.order}
             />
           </CardFooter>
         </Card>
