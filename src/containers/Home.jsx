@@ -1,31 +1,41 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 
 import {
   Container,
   Col,
   Row,
+  Button,
 } from 'reactstrap';
 import { connect } from 'react-redux';
 import CardPokemon from '../components/CardPokemon';
-
 import { baseUrl } from '../utils/baseUrl';
 import { setPokemons } from '../redux/actions';
 
 
 const Home = ({ pokemons, setPokemons }) => {
-  useEffect(() => {
-    const fetchdata = async () => {
+  const [next, setNext] = useState(0);
+
+  const fetchdata = async () => {
+    console.log(next);
+    if (next === 0) {
       const response = await fetch(baseUrl);
       const data = await response.json();
       setPokemons(data.results);
-    };
+      setNext(data.next);
+    } else if (next) {
+      const response = await fetch(next);
+      const data = await response.json();
+      setPokemons(data.results);
+      setNext(data.next);
+    }
+  };
+  useEffect(() => {
     fetchdata();
   }, []);
 
 
   return (
     <Container>
-
 
       <Row>
 
@@ -38,6 +48,8 @@ const Home = ({ pokemons, setPokemons }) => {
 
         ))}
       </Row>
+
+      <Button onClick={() => fetchdata()} color="danger" size="lg" block>Cargar más</Button>
 
     </Container>
   );
