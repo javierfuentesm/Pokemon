@@ -33,57 +33,59 @@ const CardPokemon = ({ url }) => {
 
     <>
       {pokemonDetail ? (
-        <Card>
-          <CardHeader>
-            <h1>{pokemonDetail.name.replace(/^./, pokemonDetail.name[0].toUpperCase())}</h1>
-          </CardHeader>
+        <Card className="shadow p-3 mb-5 bg-white rounded">
+          <center>
+            <CardHeader>
+              <h1>{pokemonDetail.name.replace(/^./, pokemonDetail.name[0].toUpperCase())}</h1>
+            </CardHeader>
 
-          <CardImg
-            top
-            width="100%"
-            src={pokemonDetail.sprites.front_default}
-            alt={pokemonDetail.name}
-          />
-          <CardBody>
-            <CardTitle>
-              <h3>
-                Pokemon número
-                {' '}
-                {pokemonDetail.order}
-              </h3>
-            </CardTitle>
-            <CardSubtitle>
-              <h5>Altura</h5>
-            </CardSubtitle>
-            <CardText>
-              {pokemonDetail.height}
-
-            </CardText>
-            <CardSubtitle>
-              <h5>Peso</h5>
-            </CardSubtitle>
-            <CardText>
-              {pokemonDetail.weight}
-            </CardText>
-
-            <a
-              className="btn btn-primary"
-              href={url}
-              role="button"
-            >
-              Sitio Web
-            </a>
-          </CardBody>
-          <CardFooter className="text-muted">
-            <LikeFB url={url} />
-
-            <ShareComponent
-              url2={url}
-              text={`este pokemon tiene un peso de ${pokemonDetail.weight} libras con una altura de ${pokemonDetail.height} pies`}
-              name={pokemonDetail.name}
-              order={pokemonDetail.order}
+            <CardImg
+              top
+              width="100%"
+              src={pokemonDetail.sprites.front_default}
+              alt={pokemonDetail.name}
             />
-          </CardFooter>
+            <CardBody>
+              <CardTitle>
+                <h3>
+                Pokemón número
+                  {' '}
+                  {pokemonDetail.order}
+                </h3>
+              </CardTitle>
+              <CardSubtitle>
+                <h5>Altura</h5>
+              </CardSubtitle>
+              <CardText>
+                {pokemonDetail.height}
+
+              </CardText>
+              <CardSubtitle>
+                <h5>Peso</h5>
+              </CardSubtitle>
+              <CardText>
+                {pokemonDetail.weight}
+              </CardText>
+
+              <a
+                className="btn btn-primary"
+                href={url}
+                role="button"
+              >
+              Sitio Web
+              </a>
+            </CardBody>
+            <CardFooter className="text-muted">
+              <LikeFB url={url} />
+
+              <ShareComponent
+                url2={url}
+                text={`este pokemon tiene un peso de ${pokemonDetail.weight} libras con una altura de ${pokemonDetail.height} pies`}
+                name={pokemonDetail.name}
+                order={pokemonDetail.order}
+              />
+            </CardFooter>
+          </center>
         </Card>
       ) : (
         'Cargando  informacion'

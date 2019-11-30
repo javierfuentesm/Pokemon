@@ -1,14 +1,7 @@
 import React, { useEffect } from 'react';
 
 import {
-  Card,
-  CardImg,
-  CardTitle,
-  CardText,
-  CardSubtitle,
-  CardBody,
   Container,
-  CardFooter,
   Col,
   Row,
 } from 'reactstrap';
