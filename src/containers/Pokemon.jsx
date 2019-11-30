@@ -11,17 +11,17 @@ import {
   CardFooter,
   CardHeader,
 } from 'reactstrap';
-import ShareComponent from './Share';
-import LikeFB from './LikeFB';
 
-const CardPokemon = ({ url }) => {
-  const [pokemonDetail, setPokemon] = useState(null);
+
+const CardPokemon = ({ match }) => {
+  const [pokemon, setPokemon] = useState(null);
+  const { id } = match.params;
 
   useEffect(() => {
     const fetchdata = async () => {
-      const response = await fetch(url);
+      const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${id}`);
       const data = await response.json();
-
+      console.log(data);
       setPokemon(data);
     };
     fetchdata();
@@ -29,17 +29,17 @@ const CardPokemon = ({ url }) => {
 
   return (
     <>
-      {pokemonDetail ? (
+      {pokemon ? (
         <Card
-          key={pokemonDetail.id}
+          key={pokemon.id}
           className="shadow p-3 mb-5 bg-white rounded"
         >
           <center>
             <CardHeader>
               <h1>
-                {pokemonDetail.name.replace(
+                {pokemon.name.replace(
                   /^./,
-                  pokemonDetail.name[0].toUpperCase(),
+                  pokemon.name[0].toUpperCase(),
                 )}
               </h1>
             </CardHeader>
@@ -47,41 +47,32 @@ const CardPokemon = ({ url }) => {
             <CardImg
               top
               width="100%"
-              src={pokemonDetail.sprites.front_default}
-              alt={pokemonDetail.name}
+              src={pokemon.sprites.front_default}
+              alt={pokemon.name}
             />
             <CardBody>
               <CardTitle>
                 <h3>
                 Pokemón número
                   {' '}
-                  {pokemonDetail.id}
+                  {pokemon.id}
                 </h3>
               </CardTitle>
               <CardSubtitle>
                 <h5>Altura</h5>
               </CardSubtitle>
-              <CardText>{pokemonDetail.height}</CardText>
+              <CardText>{pokemon.height}</CardText>
               <CardSubtitle>
                 <h5>Peso</h5>
               </CardSubtitle>
-              <CardText>{pokemonDetail.weight}</CardText>
+              <CardText>{pokemon.weight}</CardText>
 
-              <Link className="btn btn-primary" role="button" to={`pokemon/${pokemonDetail.id}`}>
+              <Link className="btn btn-primary" role="button" to={`pokemon/${pokemon.id}`}>
                 Más detalles
               </Link>
 
             </CardBody>
-            <CardFooter className="text-muted">
-              <LikeFB url={url} />
-
-              <ShareComponent
-                url2={url}
-                text={`este pokemon tiene un peso de ${pokemonDetail.weight} libras con una altura de ${pokemonDetail.height} pies`}
-                name={pokemonDetail.name}
-                order={pokemonDetail.order}
-              />
-            </CardFooter>
+            <CardFooter className="text-muted" />
           </center>
         </Card>
       ) : (

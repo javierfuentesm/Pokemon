@@ -5,7 +5,7 @@ import {
 import { createStore, compose } from 'redux';
 import { Provider } from 'react-redux';
 import Home from './containers/Home';
-import Detail from './containers/Detail';
+import Pokemon from './containers/Pokemon';
 import Header from './components/Header';
 import reducer from './redux/reducers';
 
@@ -19,12 +19,11 @@ const App = () => (
       <Header />
 
       <Switch>
-        <Route path="/" exact>
+        <Route exact path="/">
           <Home />
         </Route>
-        <Route path="/datail" exact>
-          <Detail />
-        </Route>
+        <Route exact path="/pokemon/:id" component={Pokemon} />
+
       </Switch>
     </Router>
   </Provider>
