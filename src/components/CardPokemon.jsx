@@ -53,7 +53,7 @@ const CardPokemon = ({ url }) => {
             <CardBody>
               <CardTitle>
                 <h3>
-                Pokemón número
+                  Pokemón número
                   {' '}
                   {pokemonDetail.id}
                 </h3>
@@ -61,23 +61,34 @@ const CardPokemon = ({ url }) => {
               <CardSubtitle>
                 <h5>Altura</h5>
               </CardSubtitle>
-              <CardText>{pokemonDetail.height}</CardText>
+              <CardText>
+                {pokemonDetail.height / 10}
+                {' '}
+                metros
+              </CardText>
               <CardSubtitle>
                 <h5>Peso</h5>
               </CardSubtitle>
-              <CardText>{pokemonDetail.weight}</CardText>
+              <CardText>
+                {pokemonDetail.weight / 10}
+                {' '}
+                kilos
+              </CardText>
 
-              <Link className="btn btn-primary" role="button" to={`pokemon/${pokemonDetail.id}`}>
+              <Link
+                className="btn btn-primary"
+                role="button"
+                to={`pokemon/${pokemonDetail.id}`}
+              >
                 Más detalles
               </Link>
-
             </CardBody>
             <CardFooter className="text-muted">
               <LikeFB url={url} />
 
               <ShareComponent
                 url2={url}
-                text={`este pokemon tiene un peso de ${pokemonDetail.weight} libras con una altura de ${pokemonDetail.height} pies`}
+                text={`este pokemon tiene un peso de ${pokemonDetail.weight / 10} kilos con una altura de ${pokemonDetail.height / 10} metros`}
                 name={pokemonDetail.name}
                 order={pokemonDetail.order}
               />
