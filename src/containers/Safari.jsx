@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 
 import {
@@ -14,7 +13,6 @@ import {
   Col,
   Row,
   Button,
-  Alert,
 } from 'reactstrap';
 import { setMyPokemons } from '../redux/actions';
 
@@ -97,9 +95,7 @@ const Safari = ({ myPokemons, setMyPokemons }) => {
                     <h5>Peso</h5>
                   </CardSubtitle>
                   <CardText>{`${pokemon.weight / 10} kilos`}</CardText>
-                  {/*  {bocadillo.length > 0 && ( */}
                   {`Has dado ${bocadillo} bocadillos`}
-                  {/*  )} */}
                   <CardText />
                 </CardBody>
               </center>

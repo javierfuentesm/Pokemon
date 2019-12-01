@@ -26,7 +26,7 @@ const Header = () => {
           <Nav navbar>
             <NavItem>
               <NavLink className="nav-link" to="/">
-                <a href="" className="text-white">Inicio</a>
+                <a href="" className="text-white">Pokédex</a>
               </NavLink>
             </NavItem>
             <NavItem>

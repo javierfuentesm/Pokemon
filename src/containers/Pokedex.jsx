@@ -7,7 +7,7 @@ import CardPokemon from '../components/CardPokemon';
 import { baseUrl } from '../utils/baseUrl';
 import { setPokemons } from '../redux/actions';
 
-const Home = ({ pokemons, setPokemons }) => {
+const Pokedex = ({ pokemons, setPokemons }) => {
   const [next, setNext] = useState(0);
 
   const fetchdata = async () => {
@@ -54,4 +54,4 @@ const mapStateToProps = (state) => ({
 const mapDispatchToProps = {
   setPokemons,
 };
-export default connect(mapStateToProps, mapDispatchToProps)(Home);
+export default connect(mapStateToProps, mapDispatchToProps)(Pokedex);

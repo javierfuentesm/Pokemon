@@ -4,7 +4,7 @@ import {
 } from 'react-router-dom';
 import { createStore, compose } from 'redux';
 import { Provider } from 'react-redux';
-import Home from './containers/Home';
+import Pokedex from './containers/Pokedex';
 import Pokemon from './containers/Pokemon';
 import Safari from './containers/Safari';
 import Header from './components/Header';
@@ -21,7 +21,7 @@ const App = () => (
 
       <Switch>
         <Route exact path="/">
-          <Home />
+          <Pokedex />
         </Route>
         <Route exact path="/safari" component={Safari} />
 
