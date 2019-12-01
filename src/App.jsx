@@ -6,6 +6,7 @@ import { createStore, compose } from 'redux';
 import { Provider } from 'react-redux';
 import Home from './containers/Home';
 import Pokemon from './containers/Pokemon';
+import Safari from './containers/Safari';
 import Header from './components/Header';
 import reducer from './redux/reducers';
 
@@ -22,6 +23,8 @@ const App = () => (
         <Route exact path="/">
           <Home />
         </Route>
+        <Route exact path="/safari" component={Safari} />
+
         <Route exact path="/pokemon/:id" component={Pokemon} />
 
       </Switch>

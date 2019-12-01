@@ -1,6 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
-
 import {
   Container,
 } from 'reactstrap';
@@ -123,8 +121,7 @@ const CardPokemon = ({ match }) => {
                 <div className="card-body">
                   <h5 className="card-title">
                     <h1>
-                      {pokemon.id}
-                      &nbsp;
+                      {`N.º ${pokemon.id} `}
                       {pokemon.name.replace(
                         /^./,
                         pokemon.name[0].toUpperCase(),

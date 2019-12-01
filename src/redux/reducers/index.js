@@ -18,10 +18,10 @@ const reducer = (
         pokemons: state.pokemons.concat(action.payload),
 
       };
-    case 'SET_MYPOKEMONS':
+    case 'SET_MY_POKEMONS':
       return {
         ...state,
-        myPokemons: action.payload,
+        myPokemons: state.myPokemons.concat(action.payload),
       };
 
 

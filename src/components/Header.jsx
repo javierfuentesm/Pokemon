@@ -10,7 +10,7 @@ import {
 } from 'reactstrap';
 import { NavLink } from 'react-router-dom';
 
-const Example = () => {
+const Header = () => {
   const [collapsed, setCollapsed] = useState(true);
 
   const toggleNavbar = () => setCollapsed(!collapsed);
@@ -30,6 +30,11 @@ const Example = () => {
               </NavLink>
             </NavItem>
             <NavItem>
+              <NavLink className="nav-link" to="/safari">
+                <a href="" className="text-white">Safari</a>
+              </NavLink>
+            </NavItem>
+            <NavItem>
               <NavLink className="nav-link" to="/pc">
                 <a href="" className="text-white">Mi PC</a>
               </NavLink>
@@ -41,4 +46,4 @@ const Example = () => {
   );
 };
 
-export default Example;
+export default Header;

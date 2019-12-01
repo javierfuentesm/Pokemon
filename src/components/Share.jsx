@@ -16,7 +16,7 @@ const ShareComponent = ({
       { network: 'Facebook', icon: FaFacebook },
     ],
     text: `Aprendí cosas interesantes sobre ${name}`,
-    longtext: `Aquí te comparto algunos de los datos mas interesantes , ${name} en el Pokedex es el numero ${order} y ${text}`,
+    longtext: `Aquí te comparto algunos de los datos más interesantes , ${name} en el Pokedex es el número ${order} y ${text}`,
   };
 
   return <ShareBlockStandard {...shareBlockProps} />;
