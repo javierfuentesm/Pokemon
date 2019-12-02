@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { connect } from 'react-redux';
+import { useDispatch, useSelector } from "react-redux";
+
 
 import {
   Card,
@@ -29,7 +30,12 @@ const randomAction = () => {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 };
 
-const Safari = ({ myPokemons, setMyPokemons }) => {
+const Safari = () => {
+
+  const myPokemons = useSelector(state => state.myPokemons);
+  const dispatch = useDispatch();
+
+
   const [pokemon, setPokemon] = useState(null);
   const [bocadillo, setBocadillo] = useState(0);
 
@@ -49,7 +55,8 @@ const Safari = ({ myPokemons, setMyPokemons }) => {
     const action = randomAction();
     if (action === 1) {
       alert(`Felicidades has capturado un ${pokemon.name}`);
-      setMyPokemons(wildPokemon);
+      dispatch(setMyPokemons(wildPokemon));
+      
       setBocadillo(0);
     } else if (action === 2) {
       alert('Parece que se ha salido de la pokebola intentalo de nuevo');
@@ -141,10 +148,5 @@ const Safari = ({ myPokemons, setMyPokemons }) => {
   );
 };
 
-const mapStateToProps = (state) => ({
-  myPokemons: state.myPokemons,
-});
-const mapDispatchToProps = {
-  setMyPokemons,
-};
-export default connect(mapStateToProps, mapDispatchToProps)(Safari);
+
+export default Safari;
