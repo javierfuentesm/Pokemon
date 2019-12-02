@@ -25,7 +25,6 @@ const randomId = () => {
 };
 const randomAction = () => {
   const min = Math.ceil(1);
-  // Es el ultimo pokemon que esta en la PokeApi
   const max = Math.floor(3);
   return Math.floor(Math.random() * (max - min + 1)) + min;
 };

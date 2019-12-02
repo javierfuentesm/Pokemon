@@ -7,6 +7,7 @@ import { Provider } from 'react-redux';
 import Pokedex from './containers/Pokedex';
 import Pokemon from './containers/Pokemon';
 import Safari from './containers/Safari';
+import MiPc from './containers/MiPc';
 import Header from './components/Header';
 import reducer from './redux/reducers';
 
@@ -26,6 +27,7 @@ const App = () => (
         <Route exact path="/safari" component={Safari} />
 
         <Route exact path="/pokemon/:id" component={Pokemon} />
+        <Route exact path="/pc" component={MiPc} />
 
       </Switch>
     </Router>

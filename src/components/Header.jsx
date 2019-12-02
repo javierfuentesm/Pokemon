@@ -19,7 +19,7 @@ const Header = () => {
     <div>
       <Navbar color="danger" variant="light" expand="lg">
         <NavbarBrand className="text-white ; mr-auto" href="/">
-          Pokemons
+          Pokémons
         </NavbarBrand>
         <NavbarToggler onClick={toggleNavbar} className="mr-2" />
         <Collapse isOpen={!collapsed} navbar>
