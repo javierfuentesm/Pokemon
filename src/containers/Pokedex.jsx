@@ -2,13 +2,12 @@ import React, { useEffect, useState } from 'react';
 import {
   Container, Col, Row, Button,
 } from 'reactstrap';
-import { connect } from 'react-redux';
 import CardPokemon from '../components/CardPokemon';
 import { baseUrl } from '../utils/baseUrl';
-import { setPokemons } from '../redux/actions';
 
-const Pokedex = ({ pokemons, setPokemons }) => {
+const Pokedex = () => {
   const [next, setNext] = useState(0);
+  const [pokemons, setPokemons] = useState([]);
 
   const fetchdata = async () => {
     if (next === 0) {
@@ -48,10 +47,5 @@ const Pokedex = ({ pokemons, setPokemons }) => {
   );
 };
 
-const mapStateToProps = (state) => ({
-  pokemons: state.pokemons,
-});
-const mapDispatchToProps = {
-  setPokemons,
-};
-export default connect(mapStateToProps, mapDispatchToProps)(Pokedex);
+
+export default Pokedex;
