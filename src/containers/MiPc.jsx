@@ -3,7 +3,6 @@ import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 
-
 import {
   Container,
   Row,
@@ -17,7 +16,6 @@ import {
 } from 'reactstrap';
 import { deleteMyPokemons } from '../redux/actions';
 
-
 const MiPc = () => {
   const myPokemons = useSelector((state) => state.myPokemons);
   const [pokemons, setPokemons] = useState(myPokemons);
@@ -28,15 +26,13 @@ const MiPc = () => {
     setPokemons(myPokemons);
   }, [myPokemons]);
 
-
   const filterPokemons = (event) => {
-    setSearch(search + event.target.value);
+    setSearch(event.target.value);
 
     let updatedList = myPokemons;
-    console.log(event.target.value);
-    updatedList = updatedList.filter((item) => item.name.toLowerCase().search(
-      event.target.value.toLowerCase(),
-    ) !== -1);
+    updatedList = updatedList.filter(
+      (item) => item.name.toLowerCase().search(event.target.value.toLowerCase()) !== -1,
+    );
     setPokemons(updatedList);
   };
 
@@ -94,7 +90,12 @@ const MiPc = () => {
                     >
                       Más detalles
                     </Link>
-                    <Button onClick={() => dispatch(deleteMyPokemons(pokemon))} color="danger">Liberar 😢</Button>
+                    <Button
+                      onClick={() => dispatch(deleteMyPokemons(pokemon))}
+                      color="danger"
+                    >
+                      Liberar 😢
+                    </Button>
                   </ListGroupItem>
                 ))}
               </ListGroup>
