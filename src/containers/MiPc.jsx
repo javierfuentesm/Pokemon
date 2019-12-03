@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 
+
 import {
   Container,
   Row,
@@ -19,7 +20,25 @@ import { deleteMyPokemons } from '../redux/actions';
 
 const MiPc = () => {
   const myPokemons = useSelector((state) => state.myPokemons);
+  const [pokemons, setPokemons] = useState(myPokemons);
+  const [search, setSearch] = useState('');
   const dispatch = useDispatch();
+
+  useEffect(() => {
+    setPokemons(myPokemons);
+  }, [myPokemons]);
+
+
+  const filterPokemons = (event) => {
+    setSearch(search + event.target.value);
+
+    let updatedList = myPokemons;
+    console.log(event.target.value);
+    updatedList = updatedList.filter((item) => item.name.toLowerCase().search(
+      event.target.value.toLowerCase(),
+    ) !== -1);
+    setPokemons(updatedList);
+  };
 
   return (
     <Container>
@@ -36,7 +55,7 @@ const MiPc = () => {
       </Row>
       <Row>
         <Col sm={12}>
-          {myPokemons.length > 0 ? (
+          {pokemons.length > 0 ? (
             <>
               <Card className="shadow p-3 mb-5 bg-white rounded" body>
                 <CardText>
@@ -46,14 +65,16 @@ const MiPc = () => {
                   <input
                     className="form-control"
                     type="text"
+                    value={search}
                     placeholder="Search"
                     aria-label="Búsqueda"
+                    onChange={filterPokemons}
                   />
                 </CardText>
               </Card>
 
               <ListGroup>
-                {myPokemons.map((pokemon) => (
+                {pokemons.map((pokemon) => (
                   <ListGroupItem className="list-group-item d-flex justify-content-between align-items-center">
                     <img
                       src={pokemon.sprites.front_default}

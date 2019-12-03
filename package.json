@@ -1,10 +1,12 @@
 {
   "name": "runa",
   "version": "0.1.0",
+  "homepage": "https://javierfuentesm.github.io/Pokemon/",
   "private": true,
   "dependencies": {
     "bootstrap": "^4.4.1",
     "emotion": "^10.0.23",
+    "gh-pages": "^2.1.1",
     "react": "^16.12.0",
     "react-custom-share": "^0.4.8",
     "react-dom": "^16.12.0",
@@ -20,7 +22,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": "react-app"
