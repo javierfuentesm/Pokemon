@@ -86,14 +86,15 @@ const MiPc = () => {
                       )}
                     </h3>
                     <Link
-                      className="btn btn-primary"
+                      className="btn btn-primary btn-xs"
                       to={`pokemon/${pokemon.id}`}
                     >
                       Más detalles
                     </Link>
                     <Button
                       onClick={() => dispatch(deleteMyPokemons(pokemon))}
-                      color="danger"
+                      className="btn btn-danger btn-xs"
+
                     >
                       Liberar 😢
                     </Button>
