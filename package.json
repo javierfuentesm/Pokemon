@@ -1,7 +1,6 @@
 {
   "name": "runa",
   "version": "0.1.0",
-  "homepage": "https://javierfuentesm.github.io/Pokemon/",
   "private": true,
   "dependencies": {
     "bootstrap": "^4.4.1",
