@@ -54,10 +54,11 @@ const MiPc = () => {
           {myPokemons.length > 0 ? (
             <>
               <Card className="shadow p-3 mb-5 bg-white rounded" body>
-                <CardText>
-                  <h4>
+                <h4>
                     Realiza una búsqueda dentro de los Pokémon que has capturado
-                  </h4>
+                </h4>
+                <CardText>
+
                   <input
                     className="form-control"
                     type="text"
@@ -71,7 +72,7 @@ const MiPc = () => {
 
               <ListGroup>
                 {pokemons.map((pokemon) => (
-                  <ListGroupItem className="list-group-item d-flex justify-content-between align-items-center">
+                  <ListGroupItem key={pokemon} className="list-group-item d-flex justify-content-between align-items-center">
                     <img
                       src={pokemon.sprites.front_default}
                       alt={pokemon.name}
@@ -102,9 +103,9 @@ const MiPc = () => {
             </>
           ) : (
             <Card className="shadow p-3 mb-5 bg-white rounded" body>
-              <CardText>
-                <h4>Parece que no has capturado a ningún Pokémon😭😭😭😭</h4>
-              </CardText>
+
+              <h4>Parece que no has capturado a ningún Pokémon😭😭😭😭</h4>
+
             </Card>
           )}
         </Col>
