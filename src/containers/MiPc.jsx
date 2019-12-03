@@ -51,7 +51,7 @@ const MiPc = () => {
       </Row>
       <Row>
         <Col sm={12}>
-          {pokemons.length > 0 ? (
+          {myPokemons.length > 0 ? (
             <>
               <Card className="shadow p-3 mb-5 bg-white rounded" body>
                 <CardText>
