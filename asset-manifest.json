@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/Pokemon/static/css/main.34de6062.chunk.css",
-    "main.js": "/Pokemon/static/js/main.e9e7b193.chunk.js",
-    "main.js.map": "/Pokemon/static/js/main.e9e7b193.chunk.js.map",
+    "main.js": "/Pokemon/static/js/main.d746e60b.chunk.js",
+    "main.js.map": "/Pokemon/static/js/main.d746e60b.chunk.js.map",
     "runtime-main.js": "/Pokemon/static/js/runtime-main.0f8b5f91.js",
     "runtime-main.js.map": "/Pokemon/static/js/runtime-main.0f8b5f91.js.map",
     "static/css/2.17e5ed98.chunk.css": "/Pokemon/static/css/2.17e5ed98.chunk.css",
     "static/js/2.68204f29.chunk.js": "/Pokemon/static/js/2.68204f29.chunk.js",
     "static/js/2.68204f29.chunk.js.map": "/Pokemon/static/js/2.68204f29.chunk.js.map",
     "index.html": "/Pokemon/index.html",
-    "precache-manifest.845f8e06834be94f17146c1242e16d9c.js": "/Pokemon/precache-manifest.845f8e06834be94f17146c1242e16d9c.js",
+    "precache-manifest.1e40c2086126a9c4eed33412899ad0f4.js": "/Pokemon/precache-manifest.1e40c2086126a9c4eed33412899ad0f4.js",
     "service-worker.js": "/Pokemon/service-worker.js",
     "static/css/2.17e5ed98.chunk.css.map": "/Pokemon/static/css/2.17e5ed98.chunk.css.map",
     "static/css/main.34de6062.chunk.css.map": "/Pokemon/static/css/main.34de6062.chunk.css.map"
@@ -19,6 +19,6 @@
     "static/css/2.17e5ed98.chunk.css",
     "static/js/2.68204f29.chunk.js",
     "static/css/main.34de6062.chunk.css",
-    "static/js/main.e9e7b193.chunk.js"
+    "static/js/main.d746e60b.chunk.js"
   ]
 }
