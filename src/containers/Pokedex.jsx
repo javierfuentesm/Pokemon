@@ -18,7 +18,7 @@ const Pokedex = () => {
     } else if (next) {
       const response = await fetch(next);
       const data = await response.json();
-      setPokemons(data.results);
+      setPokemons([...pokemons, ...data.results]);
       setNext(data.next);
     }
   };
