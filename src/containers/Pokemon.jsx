@@ -1,7 +1,9 @@
+/* eslint-disable array-callback-return */
 import React, { useState, useEffect } from 'react';
 import {
   Container,
 } from 'reactstrap';
+import PropTypes from 'prop-types';
 
 
 const COLORS = {
@@ -25,7 +27,7 @@ const COLORS = {
   water: '3295F6',
 };
 
-const CardPokemon = ({ match }) => {
+const Pokemon = ({ match }) => {
   const [pokemon, setPokemon] = useState(null);
   const [abilities, setAbilities] = useState(null);
   const [description, setDescription] = useState(null);
@@ -250,41 +252,44 @@ const CardPokemon = ({ match }) => {
                       aria-valuemax="100"
                     />
                   </div>
-                  <hr />
-                  <hr />
-                  <h3>Mas información</h3>
-                  <div>
-                    <ul className="list-group">
-                      <li className="list-group-item d-flex justify-content-between align-items-center">
-                        Altura
-                        <span className="badge badge-primary badge-pill">
-                          {`${pokemon.height} metros`}
-                        </span>
-                      </li>
-                      <li className="list-group-item d-flex justify-content-between align-items-center">
-                        Peso
-                        <span className="badge badge-primary badge-pill">
-                          {`${pokemon.weight} kilos`}
-                        </span>
-                      </li>
-                      <li className="list-group-item d-flex justify-content-between align-items-center">
-                        Habilidades
-                        <span className="badge badge-info badge-pill">
-                          {abilities}
-                        </span>
-                      </li>
-                      <li className="list-group-item d-flex justify-content-between align-items-center">
-                        Grupos de huevos a los que pertenece
-                        <i className="fas fa-egg" />
-                        <span className="badge badge-warning badge-pill">
-                          {eggGroup}
-                        </span>
-                      </li>
 
-                    </ul>
-                  </div>
+
                 </div>
               </div>
+            </div>
+          </div>
+          <div className="shadow-lg p-3 mb-5 bg-white rounded">
+
+            <h3>Mas información</h3>
+            <div>
+              <ul className="list-group">
+                <li className="list-group-item d-flex justify-content-between align-items-center">
+                        Altura
+                  <span className="badge badge-primary badge-pill">
+                    {`${pokemon.height} metros`}
+                  </span>
+                </li>
+                <li className="list-group-item d-flex justify-content-between align-items-center">
+                        Peso
+                  <span className="badge badge-primary badge-pill">
+                    {`${pokemon.weight} kilos`}
+                  </span>
+                </li>
+                <li className="list-group-item d-flex justify-content-between align-items-center">
+                        Habilidades
+                  <span className="badge badge-info badge-pill">
+                    {abilities}
+                  </span>
+                </li>
+                <li className="list-group-item d-flex justify-content-between align-items-center">
+                        Grupos de huevos a los que pertenece
+                  <i className="fas fa-egg" />
+                  <span className="badge badge-warning badge-pill">
+                    {eggGroup}
+                  </span>
+                </li>
+
+              </ul>
             </div>
           </div>
 
@@ -295,5 +300,7 @@ const CardPokemon = ({ match }) => {
     </>
   );
 };
-
-export default CardPokemon;
+Pokemon.propTypes = {
+  match: PropTypes.arrayOf.isRequired,
+};
+export default Pokemon;

@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
+
 
 import {
   Card,
@@ -100,6 +102,9 @@ const CardPokemon = ({ url }) => {
       )}
     </>
   );
+};
+CardPokemon.propTypes = {
+  url: PropTypes.arrayOf.isRequired,
 };
 
 export default CardPokemon;

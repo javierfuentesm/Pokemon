@@ -20,10 +20,10 @@ const reducer = (
     case 'DELETE_MY_POKEMONS':
       return {
         ...state,
-        myPokemons: state.myPokemons.filter((pokemon) => pokemon.uniqueId !== action.payload.uniqueId),
-
+        myPokemons: state.myPokemons.filter(
+          (pokemon) => pokemon.uniqueId !== action.payload.uniqueId,
+        ),
       };
-
 
     default:
       return state;
