@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch, useSelector } from 'react-redux';
 
 
 import {
@@ -30,8 +30,7 @@ const randomAction = () => {
 };
 
 const Safari = () => {
-
-  const myPokemons = useSelector(state => state.myPokemons);
+  const myPokemons = useSelector((state) => state.myPokemons);
   const dispatch = useDispatch();
 
 
@@ -55,7 +54,7 @@ const Safari = () => {
     if (action === 1) {
       alert(`Felicidades has capturado un ${pokemon.name}`);
       dispatch(setMyPokemons(wildPokemon));
-      
+
       setBocadillo(0);
     } else if (action === 2) {
       alert('Parece que se ha salido de la pokebola intentalo de nuevo');

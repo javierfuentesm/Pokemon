@@ -11,3 +11,7 @@ export const setMyPokemons = (payload) => ({
   type: 'SET_MY_POKEMONS',
   payload,
 });
+export const deleteMyPokemons = (payload) => ({
+  type: 'DELETE_MY_POKEMONS',
+  payload,
+});

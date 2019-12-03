@@ -23,6 +23,12 @@ const reducer = (
         ...state,
         myPokemons: state.myPokemons.concat(action.payload),
       };
+    case 'DELETE_MY_POKEMONS':
+      return {
+        ...state,
+        myPokemons: state.myPokemons.filter((pokemon) => pokemon.id !== action.payload.id),
+
+      };
 
 
     default:
