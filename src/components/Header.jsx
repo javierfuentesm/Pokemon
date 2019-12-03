@@ -21,7 +21,7 @@ const Header = () => {
         <NavbarBrand className="text-white ; mr-auto" href="/">
           Pokémons
         </NavbarBrand>
-        <NavbarToggler onClick={toggleNavbar} className="mr-2" />
+        <NavbarToggler onClick={toggleNavbar} className="bg-info" />
         <Collapse isOpen={!collapsed} navbar>
           <Nav navbar>
             <NavItem>
