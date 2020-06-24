@@ -8,9 +8,9 @@
 
 > Un pequeño proyecto que contiene un Pokédex y safari 
 
-### 🏠 [Homepage](https://adoring-lamarr-304cbc.netlify.com)
+### 🏠 [Homepage](https://pokedexpokemon.netlify.app)
 
-### ✨ [Demo](https://adoring-lamarr-304cbc.netlify.com)
+### ✨ [Demo](https://pokedexpokemon.netlify.app)
 
 ## Install
 
